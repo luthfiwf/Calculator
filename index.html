@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+  
+<html> 
+  
+<head> 
+  
+    <title>Membuat Kalkulator Dengan Javascript</title> 
+        <link rel="stylesheet" type="text/css" href="style.css">
+  
+ 
+  
+</head> 
+  
+<body> 
+	<center>
+		 
+<table class="kalkulator">
+	<tr>
+		<th colspan><h4 class="judul">KALKULATOR SEDERHANA</h4></th>
+	</tr>
+    <tr>
+			<td><input type="text" id="bilangan1"/> </td>
+			<td><input type="checkbox" id="cek1" /> </td>
+    </tr>
+    <tr>
+			<td><input type="text" id="bilangan2"/> </td>
+			<td><input type="checkbox" id="cek2" /> </td>
+    </tr>
+     <tr>
+			<td><input type="text" id="bilangan3"/> </td>
+			<td><input type="checkbox" id="cek3"    /> </td>
+    </tr>
+	<tr>
+			<td><button onclick=tambah(bilangan1.value,bilangan2.value,bilangan3.value)>+</button>
+				<button onclick=kurang(bilangan1.value,bilangan2.value,bilangan3.value)>-</button>
+				<button onclick=kali(bilangan1.value,bilangan2.value,bilangan3.value)>x</button> 
+				<button onclick=bagi(bilangan1.value,bilangan2.value,bilangan3.value)>/</button></td>
+    </tr>
+    <td> Hasil :</td>
+    <td> <h4 id="hasil">0</h4></td>
+	</tr>
+  
+</body> 
+  
+</html>
+   <script type="text/javascript"> 
+
+  
+        function tambah(val1, val2, val3){ 
+  				if (val1=='' ) {
+  					val1=0;
+
+  				}
+  				if (val2=='' ) {
+  					val2=0;
+
+  				}
+  				if (val3=='' ) {
+  					val3=0;
+
+  				}
+  				var cek1 = document.getElementById("cek1").checked;
+  				var cek2 = document.getElementById("cek2").checked;
+  				var cek3 = document.getElementById("cek3").checked;
+  				// console.log(cek1);
+  				if (cek1!=false && cek2!=false && cek3!=false) {
+  				 var hasil= document.getElementsByName("hasil"); 
+  
+				  hasil=parseInt(val1)+parseInt(val2)+parseInt(val3); 
+					  
+			     document.getElementById("hasil").innerHTML=hasil;	
+  				}else{
+  				if (cek1==false ) {
+  					if (cek2==false ) {
+  						alert('Error, Minimal 2 Checkbox harus di isi');
+  					}else{
+  						if (cek3==false) {
+  						alert('Error, Minimal 2 Checkbox harus di isi');
+  						}else{
+  						 var hasil= document.getElementsByName("hasil"); 
+  
+					            hasil=parseInt(val2)+parseInt(val3); 
+					  
+					            document.getElementById("hasil").innerHTML=hasil;	
+  						}
+  					}
+  				}else{
+  					if (cek2==false ) {
+  						if (cek3==false) {
+  						alert('Error, Minimal 2 Checkbox harus di isi');
+  						}else{
+  						 var hasil= document.getElementsByName("hasil"); 
+  
+					            hasil=parseInt(val1)+parseInt(val3); 
+					  
+					            document.getElementById("hasil").innerHTML=hasil;	
+  						}
+  					 }else{
+  					 	var hasil= document.getElementsByName("hasil"); 
+  
+					            hasil=parseInt(val1)+parseInt(val2); 
+					  
+					            document.getElementById("hasil").innerHTML=hasil;
+  					 }
+  						
+  				}
+  			}
+           
+        } 
+  
+        function kurang(val1, val2, val3){ 
+  					if (val1=='' ) {
+  					val1=0;
+
+  				}
+  				if (val2=='' ) {
+  					val2=0;
+
+  				}
+  				if (val3=='' ) {
+  					val3=0;
+
+  				}
+           var cek1 = document.getElementById("cek1").checked;
+  				var cek2 = document.getElementById("cek2").checked;
+  				var cek3 = document.getElementById("cek3").checked;
+  				// console.log(cek1);
+  				if (cek1!=false && cek2!=false && cek3!=false) {
+  				 var hasil= document.getElementsByName("hasil"); 
+  
+				  hasil=parseInt(val1)-parseInt(val2)-parseInt(val3); 
+					  
+			     document.getElementById("hasil").innerHTML=hasil;	
+  				}else{
+  				if (cek1==false ) {
+  					if (cek2==false ) {
+  						alert('Error, Minimal 2 Checkbox harus di isi');
+  					}else{
+  						if (cek3==false) {
+  						alert('Error, Minimal 2 Checkbox harus di isi');
+  						}else{
+  						 var hasil= document.getElementsByName("hasil"); 
+  
+					            hasil=parseInt(val2)-parseInt(val3); 
+					  
+					            document.getElementById("hasil").innerHTML=hasil;	
+  						}
+  					}
+  				}else{
+  					if (cek2==false ) {
+  						if (cek3==false) {
+  						alert('Error, Minimal 2 Checkbox harus di isi');
+  						}else{
+  						 var hasil= document.getElementsByName("hasil"); 
+  
+					            hasil=parseInt(val1)-parseInt(val3); 
+					  
+					            document.getElementById("hasil").innerHTML=hasil;	
+  						}
+  					 }else{
+  					 	var hasil= document.getElementsByName("hasil"); 
+  
+					            hasil=parseInt(val1)-parseInt(val2); 
+					  
+					            document.getElementById("hasil").innerHTML=hasil;
+  					 }
+  						
+  				}
+  			} 
+  
+        } 
+  
+        function kali(val1, val2, val3){ 
+        		if (val1=='' ) {
+  					val1=0;
+
+  				}
+  				if (val2=='' ) {
+  					val2=0;
+
+  				}
+  				if (val3=='' ) {
+  					val3=0;
+
+  				}
+			var cek1 = document.getElementById("cek1").checked;
+  				var cek2 = document.getElementById("cek2").checked;
+  				var cek3 = document.getElementById("cek3").checked;
+  				// console.log(cek1);
+  				if (cek1!=false && cek2!=false && cek3!=false) {
+  				 var hasil= document.getElementsByName("hasil"); 
+  
+				  hasil=parseInt(val1)*parseInt(val2)*parseInt(val3); 
+					  
+			     document.getElementById("hasil").innerHTML=hasil;	
+  				}else{
+  				if (cek1==false ) {
+  					if (cek2==false ) {
+  						alert('Error, Minimal 2 Checkbox harus di isi');
+  					}else{
+  						if (cek3==false) {
+  						alert('Error, Minimal 2 Checkbox harus di isi');
+  						}else{
+  						 var hasil= document.getElementsByName("hasil"); 
+  
+					            hasil=parseInt(val2)*parseInt(val3); 
+					  
+					            document.getElementById("hasil").innerHTML=hasil;	
+  						}
+  					}
+  				}else{
+  					if (cek2==false ) {
+  						if (cek3==false) {
+  						alert('Error, Minimal 2 Checkbox harus di isi');
+  						}else{
+  						 var hasil= document.getElementsByName("hasil"); 
+  
+					            hasil=parseInt(val1)*parseInt(val3); 
+					  
+					            document.getElementById("hasil").innerHTML=hasil;	
+  						}
+  					 }else{
+  					 	var hasil= document.getElementsByName("hasil"); 
+  
+					            hasil=parseInt(val1)*parseInt(val2); 
+					  
+					            document.getElementById("hasil").innerHTML=hasil;
+  					 }
+  						
+  				}
+  			}
+  
+        } 
+  
+        function bagi(val1, val2, val3){ 
+        		if (val1=='' ) {
+  					val1=0;
+
+  				}
+  				if (val2=='' ) {
+  					val2=0;
+
+  				}
+  				if (val3=='' ) {
+  					val3=0;
+
+  				}
+  
+           var cek1 = document.getElementById("cek1").checked;
+  				var cek2 = document.getElementById("cek2").checked;
+  				var cek3 = document.getElementById("cek3").checked;
+  				// console.log(cek1);
+  				if (cek1!=false && cek2!=false && cek3!=false) {
+  				 var hasil= document.getElementsByName("hasil"); 
+  
+				  hasil=parseInt(val1)/parseInt(val2)/parseInt(val3); 
+					  
+			     document.getElementById("hasil").innerHTML=hasil;	
+  				}else{
+  				if (cek1==false ) {
+  					if (cek2==false ) {
+  						alert('Error, Minimal 2 Checkbox harus di isi');
+  					}else{
+  						if (cek3==false) {
+  						alert('Error, Minimal 2 Checkbox harus di isi');
+  						}else{
+  						 var hasil= document.getElementsByName("hasil"); 
+  
+					            hasil=parseInt(val2)/parseInt(val3); 
+					  
+					            document.getElementById("hasil").innerHTML=hasil;	
+  						}
+  					}
+  				}else{
+  					if (cek2==false ) {
+  						if (cek3==false) {
+  						alert('Error, Minimal 2 Checkbox harus di isi');
+  						}else{
+  						 var hasil= document.getElementsByName("hasil"); 
+  
+					            hasil=parseInt(val1)/parseInt(val3); 
+					  
+					            document.getElementById("hasil").innerHTML=hasil;	
+  						}
+  					 }else{
+  					 	var hasil= document.getElementsByName("hasil"); 
+  
+					            hasil=parseInt(val1)/parseInt(val2); 
+					  
+					            document.getElementById("hasil").innerHTML=hasil;
+  					 }
+  						
+  				}
+  			}
+  
+        } 
+  
+    </script>
